@@ -1,0 +1,29 @@
+# Operating-system and editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Generated experiment data and outputs
+**/data/**
+!**/data/synthetic/
+**/data/synthetic/**
+!**/data/synthetic/.gitkeep
+**/outputs/**
+!**/outputs/.gitkeep
+
+# Local build and presentation output
+/.build/
+/output/
+
+# Earlier or alternative demos not included in this repository
+/SSD_PsychoPy_Workshop_Demo/
+/ssd-workshop-demo/
