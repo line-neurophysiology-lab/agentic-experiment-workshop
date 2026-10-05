@@ -24,7 +24,7 @@ Suggested prompt:
 
 Suggested prompt:
 
-> Propose a short implementation plan. Separate the experiment logic from PsychoPy presentation and connect each step to a test. Do not write implementation code yet.
+> Complete `PLAN.md` with a short implementation plan. Separate the experiment logic from PsychoPy presentation and connect each step to a test. Do not write implementation code yet. Stop after updating the plan.
 
 Highlight that randomization is scientific logic, PsychoPy is the presentation layer, and hardware triggers remain disabled.
 
@@ -32,12 +32,12 @@ Highlight that randomization is scientific logic, PsychoPy is the presentation l
 
 Suggested prompt:
 
-> Implement the deterministic 1-back sequence generator and its tests. Verify that the same seed reproduces the sequence, trial 1 is no-go, and there are exactly four real repetitions.
+> Implement only `src/randomization.py` and `tests/test_randomization.py`. Verify that the same seed reproduces the sequence, trial 1 is no-go, and there are exactly four real repetitions. Do not modify `app.py`, `export.py`, `triggers.py`, or any other files. Run the randomization tests, report the result, and stop.
 
 Run:
 
 ```bash
-python -m unittest discover -s tests -v
+python -m unittest tests.test_randomization -v
 ```
 
 ## 4. Show the completed experiment — 3 minutes

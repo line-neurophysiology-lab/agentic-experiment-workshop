@@ -16,7 +16,18 @@ Start with `agentic-experiment-demo-template/WORKSHOP_GUIDE.md` for the live pro
 
 ## Environment
 
-Use Python 3.10 or 3.11. The three projects use the same PsychoPy dependency, so one virtual environment at the repository root is sufficient.
+Use Python 3.10 or 3.11. The three projects use the same PsychoPy dependency, so one environment at the repository root is sufficient.
+
+### Conda
+
+```bash
+conda create -n agentic-workshop python=3.11 -y
+conda activate agentic-workshop
+python -m pip install --upgrade pip
+python -m pip install -r agentic-experiment-demo-finished/requirements.txt
+```
+
+### Python virtual environment
 
 ```bash
 python3.11 -m venv .venv
@@ -25,7 +36,7 @@ python -m pip install --upgrade pip
 python -m pip install -r agentic-experiment-demo-finished/requirements.txt
 ```
 
-On Windows, activate the environment with:
+On Windows, activate the virtual environment with:
 
 ```powershell
 .venv\Scripts\activate

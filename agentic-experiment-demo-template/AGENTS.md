@@ -18,7 +18,11 @@
 
 ## Working agreement
 
-- Plan before implementation.
-- Implement and test one component at a time.
-- State ambiguities that require a scientific decision.
-- Run relevant tests after each change.
+- Read the protocol, data dictionary, and this file before proposing changes.
+- Complete `PLAN.md` before implementation.
+- Implement only the milestone explicitly requested by the user.
+- Do not modify files outside the requested milestone, even if later work appears straightforward.
+- Run the tests relevant to the requested milestone.
+- Report what those tests establish and what remains unvalidated.
+- Stop after completing and testing the requested milestone. Do not continue to later milestones without a new user request.
+- State ambiguities that require a scientific decision instead of silently choosing an answer.
