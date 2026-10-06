@@ -33,6 +33,19 @@
 - Confirm no accidental no-go repetitions across multiple seeds.
 - Inspect CSV headers after changing export logic.
 
+## Python style (`**/*.py`)
+
+Style never overrides the scientific invariants or the data contract above.
+
+- Follow the [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html): imports, exceptions, typing, docstrings, 80-column lines. Stay consistent within a file.
+- Naming: `snake_case` for functions, variables and parameters; `PascalCase` for classes; `ALL_CAPS` for constants; booleans start with `is_` or `has_`; no `m_` or `str_` prefixes.
+- Type hints and docstrings on all public functions and classes. Give units in names or docstrings (`_ms`, `_s`) and state what timing measures (software play command, not audio onset).
+- Keep PsychoPy, audio, keyboard and trigger hardware behind thin types or functions; core logic must run without them. Import PsychoPy only inside the functions that need it.
+- Use `TypedDict` or `dataclass` for fixed-shape records, provided data-dictionary columns and trial dictionary keys stay unchanged.
+- No module-level mutable globals; expose constants as read-only (`Final`, `MappingProxyType`).
+- Validate inputs at boundaries and raise specific exceptions. No bare `except:`.
+- Use `logging` in library code; no `print`.
+
 ## Working agreement
 
 - Read the protocol, data dictionary, and this file before proposing changes.
