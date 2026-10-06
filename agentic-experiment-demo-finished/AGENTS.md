@@ -18,6 +18,19 @@
 - Do not change the protocol silently. Record scientific decisions in the protocol first.
 - Keep generated data out of source modules.
 
+## PsychoPy presentation layer
+
+- Keep an active `visual.Window` open during presentation and response collection.
+- Collect responses in a polling loop with `event.getKeys(...)`; do not rely on `event.waitKeys(maxWait=...)` without an active window.
+- Keep each trial active until both the response window and audio playback have ended. A response must not cause the next sound to start early.
+- Clear buffered keyboard events before each trial.
+- Treat reaction time as elapsed time from the software audio-play command, not validated physical audio onset.
+
+## Architecture
+
+- Keep randomization, trigger mapping, export, and timing calculations independent of PsychoPy.
+- Import PsychoPy only in the presentation layer.
+
 ## Required checks
 
 - Run `python -m unittest discover -s tests -v` after changing scientific logic.

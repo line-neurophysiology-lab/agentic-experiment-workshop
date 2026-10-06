@@ -20,6 +20,10 @@ Implement a short auditory 1-back demonstration. The participant presses Space w
 - Abort: Escape.
 - Response window: 1.2 seconds from the software audio-play command.
 - Inter-trial interval: 0.4 seconds.
+- A trial remains active until both the response window and audio playback have ended.
+- Audio stimuli must never overlap.
+- The inter-trial interval begins only after the current trial has ended.
+- Only the first Space press within the response window is recorded.
 
 ## Active trigger codes
 
@@ -41,3 +45,4 @@ Hardware trigger output must default to off. Simulated events should remain obse
 - One output row per completed trial.
 - Output matches the data dictionary.
 - Scientific logic is tested without requiring PsychoPy.
+- Consecutive audio stimuli do not overlap, including after an early response.

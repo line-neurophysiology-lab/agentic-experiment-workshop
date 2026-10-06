@@ -19,8 +19,11 @@ Demonstrate a short auditory 1-back task derived from SSD-stimuli-EEG. The parti
 - Response key: Space.
 - Abort key: Escape.
 - Response window: 1.2 seconds from the software audio-play command.
-- The next trial cannot begin until the current sound has finished.
 - Inter-trial interval: 0.4 seconds.
+- A trial remains active until both the response window and audio playback have ended.
+- Audio stimuli must never overlap.
+- The inter-trial interval begins only after the current trial has ended.
+- Only the first Space press within the response window is recorded.
 - These software timings are not validated measures of physical audio onset.
 
 ## Trigger map
@@ -49,3 +52,4 @@ Triggers are logged but hardware output is disabled by default.
 - No no-go trial accidentally repeats the preceding file.
 - Every completed trial produces one CSV row.
 - CSV fields conform to the data dictionary.
+- Consecutive audio stimuli do not overlap, including after an early response.

@@ -16,6 +16,23 @@
 - Never describe unvalidated software timing as physical audio-onset or EEG timing.
 - Do not modify or replace stimulus files.
 
+## PsychoPy presentation layer
+
+- Keep an active `visual.Window` open during presentation and response collection.
+- Collect responses in a polling loop with `event.getKeys(...)`; do not rely on `event.waitKeys(maxWait=...)` without an active window.
+- Keep each trial active until both the response window and audio playback have ended. A response must not cause the next sound to start early.
+- Clear buffered keyboard events before each trial.
+- Treat reaction time as elapsed time from the software audio-play command, not validated physical audio onset.
+- Refer to `../agentic-experiment-demo-finished/src/app.py` for the worked presentation pattern.
+
+## Architecture and checks
+
+- Keep randomization, trigger mapping, export, and timing calculations independent of PsychoPy.
+- Import PsychoPy only in the presentation layer.
+- Run `python -m unittest discover -s tests -v` after changing scientific logic.
+- Confirm no accidental no-go repetitions across multiple seeds.
+- Inspect CSV headers after changing export logic.
+
 ## Working agreement
 
 - Read the protocol, data dictionary, and this file before proposing changes.
